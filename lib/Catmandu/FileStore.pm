@@ -227,6 +227,14 @@ E.g.
 
 See also: L<Catmandu> for activating the logger in your main code.
 
+=head1 AUTHOR
+
+Patrick Hochstenbach, C<< <patrick.hochstenbach at ugent.be> >>
+
+Nicolas Steenlant, C<< <nicolas.steenlant at ugent.be> >>
+
+Nicolas Franck, C<< <nicolas.franck at ugent.be> >>
+
 =head1 SEE ALSO
 
 L<Catmandu::Store::File::Simple>,
