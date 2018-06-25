@@ -6,7 +6,6 @@ _build
 blib
 Build
 Makefile.PL
-Build.PL
 META.*
 MYMETA.*
 Catmandu-FileStore-*
