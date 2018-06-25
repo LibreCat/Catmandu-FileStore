@@ -1,6 +1,6 @@
 package Catmandu::FileStore;
 
-our $VERSION = '1.09';
+our $VERSION = '1.10';
 
 use Catmandu::Sane;
 use Moo::Role;

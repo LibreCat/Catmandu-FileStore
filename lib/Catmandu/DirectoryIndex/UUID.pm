@@ -1,6 +1,6 @@
 package Catmandu::DirectoryIndex::UUID;
 
-our $VERSION = '1.09';
+our $VERSION = '1.10';
 
 use Catmandu::Sane;
 use Catmandu::Util qw(:is :check);
