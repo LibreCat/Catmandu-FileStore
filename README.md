@@ -2,6 +2,11 @@
 
 Catmandu::FileStore - Namespace for packages that can make files persistent
 
+# STATUS
+
+[![Build Status](https://travis-ci.org/LibreCat/Catmandu-FileStore.svg?branch=master)](https://travis-ci.org/LibreCat/Catmandu-FileStore)
+[![Coverage](https://coveralls.io/repos/LibreCat/Catmandu-FileStore/badge.svg?branch=master)](https://coveralls.io/r/LibreCat/Catmandu-FileStore)
+
 # SYNOPSIS
 
     # From the command line
@@ -124,6 +129,14 @@ E.g.
     }
 
 See also: [Catmandu](https://metacpan.org/pod/Catmandu) for activating the logger in your main code.
+
+# AUTHOR
+
+Patrick Hochstenbach, `<patrick.hochstenbach at ugent.be>`
+
+Nicolas Steenlant, `<nicolas.steenlant at ugent.be>`
+
+Nicolas Franck, `<nicolas.franck at ugent.be>`
 
 # SEE ALSO
 

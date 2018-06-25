@@ -15,7 +15,7 @@ my %module_build_args = (
   },
   "dist_abstract" => "Namespace for packages that can make files persistent",
   "dist_author" => [
-    undef
+    "Patrick Hochstenbach, C<< <patrick.hochstenbach at ugent.be> >>"
   ],
   "dist_name" => "Catmandu-FileStore",
   "dist_version" => "1.09",
