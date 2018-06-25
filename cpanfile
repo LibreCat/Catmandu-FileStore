@@ -11,7 +11,7 @@ on 'test', sub {
   requires 'Test::Pod', 0;
 };
 
-requires 'Catmandu', '1.06å';
+requires 'Catmandu', '1.06';
 
 recommends 'Log::Log4perl', '1.44';
 recommends 'Log::Any::Adapter::Log4perl', '0.06';
