@@ -91,6 +91,15 @@ __END__
 
 Catmandu::FileStore - Namespace for packages that can make files persistent
 
+=begin markdown
+
+# STATUS
+
+[![Build Status](https://travis-ci.org/LibreCat/Catmandu-FileStore.svg?branch=master)](https://travis-ci.org/LibreCat/Catmandu-FileStore)
+[![Coverage](https://coveralls.io/repos/LibreCat/Catmandu-FileStore/badge.svg?branch=master)](https://coveralls.io/r/LibreCat/Catmandu-FileStore)
+
+=end markdown
+
 =head1 SYNOPSIS
 
     # From the command line
