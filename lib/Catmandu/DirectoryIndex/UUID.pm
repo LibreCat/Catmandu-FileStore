@@ -138,9 +138,6 @@ sub generator {
 
         return unless defined $path;
 
-        #Path::Iterator::Rule hardcodes forward slashes
-        $path =~ s/\//\\/go if $^O eq "MSWin32";
-
 #TODO: does not throw an error when directory is less than 12 levels (because no directories are validated)
         my $id = $self->_from_path($path);
 
