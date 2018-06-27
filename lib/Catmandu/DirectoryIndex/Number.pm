@@ -146,9 +146,6 @@ sub generator {
 
         return unless defined $path;
 
-        #Path::Iterator::Rule hardcodes forward slashes
-        $path =~ s/\//\\/go if $^O eq "MSWin32";
-
         my $id = $self->_from_path($path);
 
         +{_id => $id, _path => $path};
