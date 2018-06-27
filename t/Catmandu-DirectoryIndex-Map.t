@@ -5,6 +5,7 @@ use Test::More;
 use Test::Exception;
 use File::Temp;
 use File::Spec;
+use Cwd;
 use Path::Tiny;
 
 my $pkg;
@@ -18,7 +19,7 @@ require_ok $pkg;
 require_ok "Catmandu::Store::Hash";
 
 my $t = File::Temp->newdir(EXLOCK => 0, UNLINK => 1);
-my $dir = $t->dirname;
+my $dir = Cwd::abs_path($t->dirname);
 
 ok(
     $pkg->new(base_dir => $dir, store_name => "Hash", bag_name => "data")
