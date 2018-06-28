@@ -1,6 +1,7 @@
 Revision history for Catmandu-FileStore
 
 {{$NEXT}}
-
+    - Fixing Windows tests
+    
 1.10  2018-06-25 13:37:20 CEST
     - initial version
