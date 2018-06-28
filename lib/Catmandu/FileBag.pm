@@ -1,6 +1,6 @@
 package Catmandu::FileBag;
 
-our $VERSION = '1.10';
+our $VERSION = '1.11';
 
 use Catmandu::Sane;
 use IO::String;
