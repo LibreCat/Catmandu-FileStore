@@ -1,6 +1,8 @@
 Revision history for Catmandu-FileStore
 
 {{$NEXT}}
+
+1.12  2018-08-29 14:22:03 CEST
     - Replacing writes with syswrites and better checks on number of bytes written
 
 1.11  2018-06-28 11:30:58 CEST
