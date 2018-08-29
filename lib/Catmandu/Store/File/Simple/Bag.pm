@@ -97,8 +97,10 @@ sub get {
 
                 my $n = $out->syswrite($buffer);
 
-                Catmandu::Error->throw("syswrite on io failed : disk full or not available?")
-                    unless defined($n);
+                unless (defined($n)) {
+                    $self->log->error("syswrite on io failed : disk full or not available?");
+                    return $bytes;
+                }
 
                 $bytes += $n;
             }
