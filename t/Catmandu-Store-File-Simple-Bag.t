@@ -110,8 +110,7 @@ note("get");
     {
         my $file = $bag->get("test1.txt");
 
-        #my $tempfile = Path::Tiny->tempfile;
-        my $tempfile = '/tmp/brol';
+        my $tempfile = Path::Tiny->tempfile;
 
         my $io    = IO::File->new("> $tempfile");
 
