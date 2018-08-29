@@ -73,6 +73,8 @@ sub add {
             unless defined($io);
 
         $io->write($str);
+
+        bytes::length($str);
     };
 
     $self->store->_files->{$name}->{$id} = clone($data);

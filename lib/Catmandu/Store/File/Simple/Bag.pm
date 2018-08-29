@@ -94,7 +94,13 @@ sub get {
             while (!$data->eof) {
                 my $buffer;
                 $data->read($buffer, 1024);
-                $bytes += $out->write($buffer);
+
+                my $n = $out->syswrite($buffer);
+
+                Catmandu::Error->throw("syswrite on io failed : disk full or not available?")
+                    unless defined($n);
+
+                $bytes += $n;
             }
 
             $out->close();
