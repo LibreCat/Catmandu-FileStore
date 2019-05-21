@@ -97,6 +97,28 @@ Catmandu::Store::File::Simple - A Catmandu::FileStore to store files on disk
     # Delete the file 'myfile.txt' from the container '1234'
     $ catmandu delete File::Simple --root t/data --bag 1234 --id myfile.txt
 
+    # Define a configuration file
+    $ cat catmandu.yml
+    ---
+    store:
+       mypaths:
+         package: DBI
+         options:
+           data_source: dbi:sqlite:dbname=data/index.db
+       myfiles:
+         package: File::Simple
+         options:
+           root: data/files
+           directory_index_package: Map
+           directory_index_options:
+                store_name: mypaths
+                bag_name: data
+    ...
+
+    # Use the default 'catmandu.yml' configuraion file to add data to the FileStore
+    $ catmandu stream /tmp/myfile.txt to myfiles --bag 1234 --id myfile.txt
+    $ catmandu stream myfiles --bag 1234 --id myfile.txt to /tmp/myfile.txt
+
     # From Perl
     use Catmandu;
 
