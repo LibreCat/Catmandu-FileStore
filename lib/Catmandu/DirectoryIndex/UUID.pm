@@ -9,7 +9,6 @@ use Cwd;
 use Path::Tiny;
 use Path::Iterator::Rule;
 use File::Spec;
-use Data::UUID;
 use Catmandu::BadArg;
 use Catmandu::Error;
 use Data::Dumper;

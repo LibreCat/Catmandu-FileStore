@@ -9,7 +9,6 @@ use Catmandu;
 use Catmandu::Util;
 use Catmandu::Store::File::Simple::Index;
 use Catmandu::Store::File::Simple::Bag;
-use Data::UUID;
 use Catmandu::DirectoryIndex::UUID;
 use Catmandu::DirectoryIndex::Number;
 use namespace::clean;
