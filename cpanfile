@@ -9,6 +9,7 @@ on 'test', sub {
   requires 'Test::LWP::UserAgent' , 0;
   requires 'Test::More', '0.99';
   requires 'Test::Pod', 0;
+  requires 'IO::Callback', 0;
 };
 
 requires 'Catmandu', '>=1.06';
