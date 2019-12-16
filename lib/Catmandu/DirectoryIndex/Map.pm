@@ -1,6 +1,6 @@
 package Catmandu::DirectoryIndex::Map;
 
-our $VERSION = '1.151';
+our $VERSION = '1.16';
 
 use Catmandu::Sane;
 use Catmandu::Util qw(:is :check);
