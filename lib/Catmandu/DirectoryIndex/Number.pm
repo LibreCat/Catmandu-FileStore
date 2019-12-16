@@ -26,7 +26,7 @@ sub _trigger_keysize {
 sub format_id {
     my ($self, $id) = @_;
 
-    Catmandu::BadArg->throw("need natural number") unless is_natural($id);
+    Catmandu::BadArg->throw("need a number") unless $id =~ /^\d+$/;
 
     my $n_id = int($id);
 
