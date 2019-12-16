@@ -68,6 +68,74 @@ sub upload {
     }
 }
 
+# Helper method to implement file streaming in Dancer contexts
+sub file_streamer {
+    my ($self,$file,$out)  = @_;
+    my $bytes = 0;
+    my $data  = IO::File->new($file, "r")
+        || Catmandu::Error->throw("$file not readable");
+
+    Catmandu::Error->throw("no io defined or not writable")
+        unless defined($out);
+
+    Catmandu::Error->throw("$out doesn't support syswrite!")
+        unless $out->can('syswrite');
+
+    OUTER: while (!$data->eof) {
+        my $buffer;
+        my $n_read = $data->read($buffer, 1024);
+
+        if (!defined($n_read)) {
+            $self->log->error("read error for $file : $!");
+            Catmandu::Error->throw("read error for $file : $!");
+        }
+        elsif ($n_read == 0) {
+            # end-of-file
+            last;
+        }
+        else {
+            # all is ok
+        }
+
+        my $bytes_to_write = $n_read;
+        my $bytes_written  = 0;
+        
+        while ($bytes_to_write) {
+            my $n_write = $out->syswrite($buffer,$bytes_to_write);
+
+            if ($!{EINTR} || $!{EWOULDBLOCK} || $!{EAGAIN}) {
+                # no data read, try again
+                next;
+            }
+            elsif ($!) {
+                $self->log->error("write failed : $!");
+                last OUTER;
+            }
+            elsif (!defined($n_write) || $n_write == 0) {
+                $self->log->error("write failed : no bytes written");
+                last OUTER;
+            }
+            elsif ($n_read < $n_write) {
+                # incomplete write
+                $buffer = substr($buffer,$n_write);
+            }
+            else {
+                # all is ok
+            }
+
+            $bytes_to_write -= $n_write;
+            $bytes_written   = $n_write;
+        }
+
+        $bytes += $bytes_written;
+    }
+
+    $out->close();
+    $data->close();
+
+    $bytes;
+}
+
 1;
 
 __END__
