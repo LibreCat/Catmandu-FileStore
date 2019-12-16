@@ -1,6 +1,8 @@
 Revision history for Catmandu-FileStore
 
 {{$NEXT}}
+    - Fixing tests for numbered directories
+    - Adding a more robust helper to stream file data
 
 1.151  2019-10-11 07:43:46 CEST
     - Adding missing test dependencies [manwar]
