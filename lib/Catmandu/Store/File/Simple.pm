@@ -114,7 +114,7 @@ Catmandu::Store::File::Simple - A Catmandu::FileStore to store files on disk
                 bag_name: data
     ...
 
-    # Use the default 'catmandu.yml' configuraion file to add data to the FileStore
+    # Use the default 'catmandu.yml' configuration file to add data to the FileStore
     $ catmandu stream /tmp/myfile.txt to myfiles --bag 1234 --id myfile.txt
     $ catmandu stream myfiles --bag 1234 --id myfile.txt to /tmp/myfile.txt
 
